@@ -1,0 +1,48 @@
+<h1 class="text-center">Welcome to Product Application</h1>
+<h1 class="text-center">Product List</h1>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-stripped table-responsive table-hover">
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor='let prod of product | paginate: { itemsPerPage: 2, currentPage: page }'>
+            <td>{{prod.pid}}</td>
+            <td>{{prod.name}}</td>
+            <td>{{prod.description}}</td>
+            <td>{{prod.price}}</td>
+
+            <td>
+              <button class="btn btn-warning" (click)='editprod(prod)'>Edit</button>&nbsp;&nbsp;
+              <button class="btn btn-danger" (click)='delete(prod)'>Delete</button>&nbsp;&nbsp;
+
+            </td>
+          </tr>
+          <tr *ngIf="product.length==0">
+            <th colspan="5">
+              <p class="text-right text-danger">Sorry, No products to display...!</p>
+            </th>
+          </tr>
+
+        </tbody> 
+
+      </table>
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+      <div class="text-center">
+        <button class="btn btn-success" (click)='addProd()'>Add Product</button>&nbsp;
+
+        <button class="btn btn-danger" (click)='deleteAllProduct(product)'>Delete All Products </button>
+      </div>
+    </div>
+  </div>
+</div> 

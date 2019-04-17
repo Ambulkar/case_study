@@ -1,0 +1,25 @@
+{
+  "Product": [
+    {
+      "id": 1,
+      "pid": "1001",
+      "name": "Mobile",
+      "description": "samsung",
+      "price": "7500"
+    },
+    {
+      "id": 2,
+      "pid": "1002",
+      "name": "Mobile",
+      "description": "nokia",
+      "price": "12000"
+    },
+    {
+      "id": 3,
+      "pid": "1003",
+      "name": "Mobile",
+      "description": "samsung",
+      "price": "7500"
+    }
+  ]
+}
